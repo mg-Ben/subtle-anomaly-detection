@@ -18,18 +18,8 @@ Tventana = 30; %[min] (Tamaño de ventana deslizante T)
 n = 4; %Grado de la regresión polinómica
 Granularidad_deteccion = 180; %= scope del sistema [s] (alcance o tiempo de incertidumbre de predicción)
 bitsPaquetes = 3; %Indica si trabajar con bits/s (2) o packets/s (3)
-filenames = ["./TimeSeriesData/march_week3_csv/BPSyPPS.txt";
-             "./TimeSeriesData/march_week4_csv/BPSyPPS.txt";
-             "./TimeSeriesData/march_week5_csv/BPSyPPS.txt";
-             "./TimeSeriesData/april_week2_csv/BPSyPPS.txt";
-             "./TimeSeriesData/april_week3_csv/BPSyPPS.txt";
-             "./TimeSeriesData/april_week4_csv/BPSyPPS.txt";
-             "./TimeSeriesData/may_week1_csv/BPSyPPS.txt";
-             "./TimeSeriesData/may_week3_csv/BPSyPPS.txt";
-             "./TimeSeriesData/june_week1_csv/BPSyPPS.txt";
-             "./TimeSeriesData/june_week2_csv/BPSyPPS.txt";
-             "./TimeSeriesData/june_week3_csv/BPSyPPS.txt";
-             "./TimeSeriesData/july_week1_csv/BPSyPPS.txt"];
+filenames = ["./Output_files/<yourfile1.csv>";
+             "./Output_files/<yourfile2.csv>"];
 %--------------------------------------------------------------------------
 %Obtener la matriz con todas las series temporales de cada semana
 %NOTA: Dado que todas las series se ordenan semanalmente, algunas
