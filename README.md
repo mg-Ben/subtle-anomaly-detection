@@ -1,6 +1,10 @@
 # Estudio de la predictibilidad del tráfico en Internet para la detección de anomalías sutiles
 _Repositorio basado en el Trabajo de Final de Máster con título "Estudio de la predictibilidad del tráfico en Internet para la detección de anomalías sutiles"_
 
+El sistema completo consta de tres etapas claramente diferenciadas. La primera consiste en la extracción de los datos de entrenamiento; la segunda es el núcleo del algoritmo de predicción; la última consiste en el algoritmo con el que se utiliza el modelo predicho para evaluar anomalías sutiles sobre la serie temporal.
+
+![General System Diagram](/readme_images/system-general.png)
+
 # Índice
 1. [Extracción de datos de entrenamiento](#extraccion-de-datos-de-entrenamiento)
 
@@ -8,7 +12,7 @@ _Repositorio basado en el Trabajo de Final de Máster con título "Estudio de la
     2. [Extractor de parámetros estadísticos y coeficientes polinómicos](#extractor-de-parámetros-estadísticos-y-coeficientes-polinómicos)
 
 2. [Algoritmo de predicción](#algoritmo-de-entrenamiento)
-3. [Algoritmo de evaluación]()
+3. [Algoritmo de evaluación](#algoritmo-de-evaluación)
 
 ## Extracción de datos de entrenamiento
 El primer paso consiste en extraer la Base de Datos que se utilizará para el entrenamiento posterior. El directorio con el código para obtener estos datos es ```/Data_extraction```. Consta de los siguientes subdirectorios y ficheros:
@@ -33,7 +37,7 @@ La salida se guardará automáticamente en ```/Ouput_files```.
 
 ### Extractor de parámetros estadísticos y coeficientes polinómicos
 ```/NetflowsToTimeSeries/TrendDynamics.m```
-Código escrito en Matlab para la obtención de la Base de Datos de entrenamiento con las **dinámicas de la serie temporal** (i.e. los parámetros estadísticos y los coeficientes polinómicos). Es necesario ejecutarlo desde el entorno de Matlab.
+Código escrito en Matlab para la obtención de la Base de Datos de entrenamiento con las **dinámicas de la serie temporal** (i.e. los parámetros estadísticos y los coeficientes polinómicos; sin embargo, en este trabajo solo se explora la predicción de coeficientes polinómicos). Es necesario ejecutarlo desde el entorno de Matlab.
 Las variables de entrada del fichero TrendDynamics.m son:
 - ```filenames```: ficheros de entrada de los que se desea obtener las dinámicas de la serie temporal
 - ```JSONoutput_filename```: nombre del fichero de salida con los datos de entrenamiento, que será un fichero con extensión ```.JSON```
@@ -50,3 +54,12 @@ La salida del Script será un fichero ```.JSON``` con los datos de entrenamiento
 ```/Network_forecasting/main.py```
 
 Código Python para la programación de la red LSTM y para la predicción de la tendencia (i.e. de cada coeficiente del polinomio en la ventana de test).
+Para ejecutarlo:
+
+```shell
+python main.py
+```
+
+## Algoritmo de evaluación
+```/Anomaly_evaluation/resultadosFinalesAlgoritmo.m```
+
