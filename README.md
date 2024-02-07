@@ -11,7 +11,7 @@ El sistema completo consta de tres etapas claramente diferenciadas. La primera c
     1. [Conversor de flujos de red a series temporales](#conversor-de-flujos-de-red-a-series-temporales)
     2. [Extractor de parámetros estadísticos y coeficientes polinómicos](#extractor-de-parámetros-estadísticos-y-coeficientes-polinómicos)
 
-2. [Algoritmo de predicción](#algoritmo-de-entrenamiento)
+2. [Algoritmo de predicción](#algoritmo-de-predicción)
 3. [Algoritmo de evaluación](#algoritmo-de-evaluación)
 
 ## Extracción de datos de entrenamiento
@@ -53,7 +53,7 @@ La salida del Script será un fichero ```.JSON``` con los datos de entrenamiento
 ## Algoritmo de predicción
 ```/Network_forecasting/main.py```
 
-Código Python para la programación de la red LSTM y para la predicción de la tendencia (i.e. de cada coeficiente del polinomio en la ventana de test).
+Código Python para la programación de la red LSTM y para la predicción de la tendencia (i.e. de cada coeficiente del polinomio en la ventana de test). Consiste en una interfaz gráfica de usuario donde será posible configurar diferentes parámetros de la red LSTM.
 Para ejecutarlo:
 
 ```shell
